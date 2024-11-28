@@ -8,10 +8,12 @@
     <style>
         .container {
             width: 575px;
-            height: 825px;
-
-            background-color: #797978;
-            padding-left: 30px;
+            height: 600px;
+            margin: auto;
+            background-color: #c067d4;
+            padding-left: 50px;
+            border-radius: 15px;
+            box-shadow: inset 7px 6px 25px -4px rgba(0,0,0,0.81);
         }
 
         #height,
@@ -53,6 +55,11 @@
             padding-top: 25px;
 
         }
+        input{
+            border-radius: 10px;
+            outline: none;
+            border: 2px solid rgb(0, 0, 0);
+        }
     </style>
 </head>
 
@@ -63,6 +70,7 @@
             <p><label>Height in CM: </label><input type="text" id="height" /></p>
             <p><label>Weight in KG: </label><input type="text" id="weight" /></p>
             <button>Calculate</button>
+            <button type="reset" value="Reset">Reset</button>
             <div id="results"></div>
             <div id="weight-guide">
                 <h3>BMI Weight Guide</h3>
@@ -88,7 +96,7 @@
                 const bmi = (weight / ((height * height) / 10000)).toFixed(2);
                 // results.innerHTML = `<span>${bmi}</span>`;
                 
-                results.style.color="red"
+                results.style.color="green"
                 if (bmi <= 18.9) {
                     results.innerHTML = `<span>${bmi} You are Under weight</span>`;
                 } else if (bmi >= 18.9 & bmi<= 24.9) {
